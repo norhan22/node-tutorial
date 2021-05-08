@@ -8,15 +8,15 @@
 
 ## Node Architecture
 
-- EVERY browser has a JS engine  it takes a js code  and convert to machine code 
---- Microsoft edge =>  Charkra 
---- Firefox  => SpiderMonkey 
---- Chrome => V8 ( the fastest  JS engine )
+- EVERY browser has a JS engine  it takes a js code  and convert to machine code
+  - Microsoft edge =>  Charkra 
+   Firefox  => SpiderMonkey 
+   Chrome => V8 ( the fastest  JS engine )
 
 - Browser provide a runtime environment for executing  JS code 
 
 - *Ryan Dahl => Creator of node* 
---- he took v8  Google JS  Engine  and embedded it inside C++ program and called the program Node 
+   he took v8  Google JS  Engine  and embedded it inside C++ program and called the program Node 
  - Node isn't neither  a programming language nor framework but is a runtime environment  
 
 *So Node is a C++  program that includes a chrome's v8 JS engine*
