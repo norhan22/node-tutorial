@@ -3,8 +3,8 @@
 My first Node app while training from [Node.js Tutorial for Beginners: Learn Node in 1 Hour  by Programming with Mosh ](https://www.youtube.com/watch?v=TlB_eWDSMt4)
 
 ## What is Node js
-- Node is an open source and cross plateform runtime enviroment for excuting js code outside browsers 
-- We often use node to build backend services like API Application Programming Interface 
+- Node is an open source and cross platform runtime environment for executing js code outside browsers 
+- We often use node to build backend services like **API** **A**pplication **P**rogramming **I**nterface 
 
 ## Node Architecture
 
