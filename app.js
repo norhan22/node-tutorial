@@ -1,21 +1,43 @@
 const
-    path = require('path'),
-    os = require('os'),
-    EventEmitter = require('events'),
-    greetings = require('./nameModule'),
-    Chat = require('./chat'), // Class
-    chat = new Chat(); // Object of Chat class
+  
+  
+  path = require('path'),
+  os = require('os'),
+  greetings = require('./nameModule'),
+  Chat = require('./chat'), // Class
+  chat = new Chat(), // Object of Chat class
+  server = require('./server'),
+  logSeparator = () => { console.log(`\n ${'*'.repeat(30)} \n`) }
 
-console.log(` 
-${'*'.repeat(30)}
 
-    Own Module : ${greetings('Norhan')}
-    get Path of the __filename by Path Build-in module :
-    ${path.parse(__filename).dir}
-    Get total memory the operating system by OS Build-in module : ${os.totalmem()} 
- 
- ${'*'.repeat(30)}
-`);
+/////////////////////////////////////////////
+// Server Listeners Logs
 
-chat.on('sendMessage', (e) => console.log(`listener New Msg : ${e.msg}`))
-chat.sendMessage('Good Morning!');
+console.groupCollapsed('Server Logs')
+console.groupEnd()
+////////////////////////////////////////////
+logSeparator()
+
+/////////////////////////////////////////////
+// Modules Logs
+
+console.groupCollapsed('Modules')
+console.log(' Own Module : ', greetings('Norhan'))
+console.log(' et Path of the __filename by Path Build-in module : ', path.parse(__filename).dir)
+console.log('   Get total memory the operating system by OS Build-in module : ', os.totalmem())
+console.groupEnd()
+////////////////////////////////////////////
+
+logSeparator()
+
+/////////////////////////////////////////////
+// Chat Listeners Logs
+
+console.groupCollapsed(' Chat Logs')
+chat.on('sendMessage',
+  (e) => console.log(`Chat listener New Msg : ${e.msg}`)
+)
+chat.sendMessage('Good Morning!')
+console.groupEnd()
+////////////////////////////////////////////
+

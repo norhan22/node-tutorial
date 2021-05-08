@@ -143,4 +143,8 @@ App.js  File :
     chat.on('sendMessage', (e) => console.log(`listener New Msg : ${e.msg}`))
     chat.sendMessage('Good Morning!');
 
+### HTTP Module
 
+- Using On Listener &&  Socket Class ( *Not recommended* ) 
+- Dealing with Request
+ && Response in createServer Method  more recommended 
