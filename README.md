@@ -32,26 +32,29 @@
   -  highly-scalable => **none-blocking asynchronous**
 a *single thread*  is used to handle multiple requests 
 
-- The big difference between Node and (asp.net  , others backend framework) apps  is that node app is **asynchronous  non-blocking** but others is a blocking synchronous 
+- The big difference between Node and (asp.net  , others backend stuff) apps  is that node app is **asynchronous  non-blocking** but others is a blocking synchronous 
 
 - While database prepares result of a request  node puts a message in an **Event Queue** 
 Node continuously monitoring this in background .. once it finds an event in this queue it will take it out and process it 
 
-- Node is **deal** for **I/O - intensive app** that have a lot of disk or network access without need to throw in more hardware which are operations that are mostly offloaded to the operating system.
+- **Node** is **deal** for **I/O - intensive app** that have a lot of disk or network access without need to throw in more hardware which are operations that are mostly offloaded to the operating system.
 - **Don't use node** for **CPU-intensive apps** like video encoding or an image manipulation services  because CPU apps needs a lot of calculations that should be done by CPU 
 
+<br/>
 
-## Your first Node Program 
+## [13:01](https://youtu.be/TlB_eWDSMt4?t=781) Your first Node Program 
 1. create app.js with console.log("hello") 
 2. on terminal call node app.js 
 
-this js file we are gonna to pass it to node and node is gonna to give it to V8 for execution
+- we are gonna to pass app.js file to node and node is gonna to give it to V8 for execution
 
-Node used V8 but not have Window || document  objects that  part of the browser's  runtime environment 
+- Node used V8 but not have Window || document  objects that  part of the browser's  runtime environment 
 But it have other objects to  work with files , operating system , network and so on
 
 
-## Node Module System
+<br/>
+
+## [15:32](https://youtu.be/TlB_eWDSMt4?t=925) Node Module System
 
 
 All Vars && Functions that are defined globally we can access them via this window object  inside the browser
@@ -61,14 +64,14 @@ instead of Window ...  Node used Global => global.console.log
 
 The vars && functions that defined outside  global , are not added to global object ( reverse  window object )
 
-## Modules
+## [19:14](https://youtu.be/TlB_eWDSMt4?t=1154) Modules
 
 ***the global scope problem*** 
 In real world apps we split JS code to multiple files so it possible that we have 2 vars || functions with the same name 
 when we call them the new one will overwrite the previous one
 
 ***Instead we need modularity :***
- - Small blocks that have it's own vars && functions that are scoped to this block || file || module  that not available outside this module ( Called in OOP Private )
+ - Small blocks that have it's own vars && functions that are scoped to this block || file || module  that not available outside this module ( Called in OOP *Private* )
 
 - To use the vars || functions outside this module you need to export it and make it public
 - Every file in a node app is considered as module
@@ -81,7 +84,9 @@ you can call a single method or an object :
 
     module.exports = methodName
 
-## Module Wrapper Function
+<br/>
+
+## [32:59](https://youtu.be/TlB_eWDSMt4?t=1979) Module Wrapper Function
 
 Node wrap every module into an  ***Immediately Invoked Function Expression*** that has some params 
 
@@ -92,7 +97,8 @@ Node wrap every module into an  ***Immediately Invoked Function Expression*** th
 
 ***Note :*** (`module.exports = log`)  !== (`exports = log`) because we can't change the reference
 
-## Build-in Modules
+
+## [39:57](https://youtu.be/TlB_eWDSMt4?t=2397) Build-in Modules
 *Ex*
  - os => Operating system
  - fs => File system => ( every operation comes in 2 forms async , sync
@@ -100,7 +106,7 @@ Node wrap every module into an  ***Immediately Invoked Function Expression*** th
  - events => events
  - http => Http
 
-## Events 
+## [53:18](https://youtu.be/TlB_eWDSMt4?t=3198) Events 
  *Events* module is a *class*  so when require it into const with *PascalCase*  name always like 'EventEmitter'
  
  Ex :
@@ -114,7 +120,9 @@ Node wrap every module into an  ***Immediately Invoked Function Expression*** th
 
 **Note** : order is important here  the listener must be registered before the emit (call the event) 
 
-### Extended Events 
+<br/>
+
+### [1:02:47](https://youtu.be/TlB_eWDSMt4?t=3767) Extending EventEmitter
 
 when we register an emitter in module and want to listen it in another 
 we should use the module as class  that extends EventsEmitter 
@@ -146,8 +154,9 @@ App.js  File :
     
     chat.on('sendMessage', (e) => console.log(`listener New Msg : ${e.msg}`))
     chat.sendMessage('Good Morning!');
+<br>
 
-### HTTP Module
+### [1:10:51](https://youtu.be/TlB_eWDSMt4?t=4251) HTTP Module
 
 - Using On Listener &&  Socket Class ( *Not recommended* ) 
 - Dealing with Request
