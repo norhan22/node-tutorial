@@ -12,8 +12,8 @@
 
 - EVERY browser has a JS engine  it takes a js code  and convert to machine code
   - Microsoft edge =>  Charkra 
-   Firefox  => SpiderMonkey 
-   Chrome => V8 ( the fastest  JS engine )
+  - Firefox  => SpiderMonkey 
+  - Chrome => V8 ( the fastest  JS engine )
 
 - Browser provide a runtime environment for executing  JS code 
 
@@ -122,7 +122,7 @@ Node wrap every module into an  ***Immediately Invoked Function Expression*** th
 
 <br/>
 
-### [1:02:47](https://youtu.be/TlB_eWDSMt4?t=3767) Extending EventEmitter
+## [1:02:47](https://youtu.be/TlB_eWDSMt4?t=3767) Extending EventEmitter
 
 when we register an emitter in module and want to listen it in another 
 we should use the module as class  that extends EventsEmitter 
